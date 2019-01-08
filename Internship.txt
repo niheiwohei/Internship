@@ -1,0 +1,48 @@
+$ mkdir learngit     创建一个空目录
+$ cd learngit
+$ pwd
+/Users/michael/learngit
+
+初始化一个Git仓库，使用git init命令。
+
+添加文件到Git仓库，分两步：
+
+使用命令git add <file>，注意，可反复多次使用，添加多个文件；
+使用命令git commit -m <message>，完成。
+
+要随时掌握工作区的状态，使用git status命令。
+
+如果git status告诉你有文件被修改过，用git diff可以查看修改内容。
+git log 查看修改历史， git log --pretty=oneline
+返回上一个版本 git reset --hard HEAD^ (^代表返回几个版本，HEAD~100)
+cat +文档 查看当前版本内容
+
+
+git reflog 查看每次操作的commit id
+
+		add		          commit
+工作区——————>stage(暂存区)——————>master
+
+git diff HEAD -- readme.txt//文件名  命令可以查看工作区和版本库里面最新版本的区别
+
+git checkout -- file可以丢弃工作区的修改
+
+撤销修改：
+1、在工作区 git checkout -- file
+2、在暂存区 git reset HEAD -- file(退回工作区)——————>git checkout -- file（可以丢弃工作区的修改）
+
+删除：rm +文件名--->  确定删除 git rm +文件名 --->git commit -m "xxx"
+误删: rm +文件名--->  git checkout--文件名
+
+关联一个远程库，使用命令git remote add origin git@github.com:xxx/learngit.git
+关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+
+
+
+
+
+
+
+
+
